@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+  <table border="2">
+	<thead>
+		<tr>
+			<td colspan="6" align="center">Tabla Mujeres</td>
+		</tr>
+	 	<tr>
+			<td rowspan="2">
+				IP
+			</td>
+			<td rowspan="2">
+				Nombre
+			</td>
+			<td colspan="4" align="center">
+				Estado de Animo
+			</td>
+
+		</tr>
+		<tr>
+			<td>
+			   Enojado
+			</td>
+			<td>
+				Triste
+			</td>
+			<td>
+				Alegre
+			</td>
+			<td>
+				Nervioso
+			</td>
+		</tr>
+	</thead>
+
+	<script>
+		i=1;
+		j=1;
+		do{
+			sexo=prompt("Sexo: (H|M)");
+			if (sexo=="M" || sexo=="m") {
+					nom=prompt("Nombre");
+					estado=prompt("Estado de animo"+ 
+						" A)Enojado,"
+						+" B)Triste,"
+						+" C)Alegre,"
+						+" D)Nervioso");
+					res=prompt("Desea ingresar otro nombre");
+				document.write("<tr>"
+								+"<td>"+i+"</td>"
+								+"<td>"+nom+"</td>");
+				if (estado=="A" || estado=="a") {
+				document.write("<td>"+"<img src=\"imagenes/enojado.png\">"+"</td>"
+								+"<td>"+"<img src=\"\">"+"</td>"
+								+"<td>"+"<img src=\"\">"+"</td>"
+								+"<td>"+"<img src=\"\">"+"</td>");
+				}
+				if (estado=="B" || estado=="b") {
+				document.write("<td>"+"<img src=\"\">"+"</td>"
+								+"<td>"+"<img src=\"imagenes/triste.png\">"+"</td>"
+								+"<td>"+"<img src=\"\">"+"</td>"
+								+"<td>"+"<img src=\"\">"+"</td>");
+				}
+				if (estado=="C" || estado=="c") {
+				document.write("<td>"+"<img src=\"\">"+"</td>"
+								+"<td>"+"<img src=\"\">"+"</td>"
+								+"<td>"+"<img src=\"imagenes/alegre.png\">"+"</td>"
+								+"<td>"+"<img src=\"\">"+"</td>");
+				}
+				if (estado=="D" || estado=="d") {
+				document.write("<td>"+"<img src=\"\">"+"</td>"
+								+"<td>"+"<img src=\"\">"+"</td>"
+								+"<td>"+"<img src=\"\">"+"</td>"
+								+"<td>"+"<img src=\"imagenes/nervioso.png\">"+"</td>");
+				}
+
+				i++;	
+			}
+			document.write("</tr>");
+
+			
+				if (sexo=="H" || sexo=="h") {
+					document.write("<tr colspan=\"6\">"+"Tabla de Hombres"+"</tr>");
+					nom=prompt("Nombre");
+					estado=prompt("Estado de animo"+ 
+						" A)Enojado,"
+						+" B)Triste,"
+						+" C)Alegre,"
+						+" D)Nervioso");
+					res=prompt("Desea ingresar otro nombre");
+				document.write("<tr>"
+								+"<td>"+j+"</td>"
+								+"<td>"+nom+"</td>");
+				if (estado=="A" || estado=="a") {
+				document.write("<td>"+"<img src=\"imagenes/enojado.png\">"+"</td>"
+								+"<td>"+"<img src=\"\">"+"</td>"
+								+"<td>"+"<img src=\"\">"+"</td>"
+								+"<td>"+"<img src=\"\">"+"</td>");
+				}
+				if (estado=="B" || estado=="b") {
+				document.write("<td>"+"<img src=\"\">"+"</td>"
+								+"<td>"+"<img src=\"imagenes/triste.png\">"+"</td>"
+								+"<td>"+"<img src=\"\">"+"</td>"
+								+"<td>"+"<img src=\"\">"+"</td>");
+				}
+				if (estado=="C" || estado=="c") {
+				document.write("<td>"+"<img src=\"\">"+"</td>"
+								+"<td>"+"<img src=\"\">"+"</td>"
+								+"<td>"+"<img src=\"imagenes/alegre.png\">"+"</td>"
+								+"<td>"+"<img src=\"\">"+"</td>");
+				}
+				if (estado=="D" || estado=="d") {
+				document.write("<td>"+"<img src=\"\">"+"</td>"
+								+"<td>"+"<img src=\"\">"+"</td>"
+								+"<td>"+"<img src=\"\">"+"</td>"
+								+"<td>"+"<img src=\"imagenes/nervioso.png\">"+"</td>");
+				}
+
+				j++;
+				document.write("</tr>");	
+			
+			}//if
+
+		}while(res=="si" || res=="SI");
+		document.write("<tr>"
+				           +"<td>"+"hola"+"</td>"
+				           +"</tr>");
+    </script>
+</table>
+</body>
+</html>
