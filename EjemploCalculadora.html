@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Calculadora</title>
+</head>
+<link rel="stylesheet" href="css/styloCaluladora.css">
+<body onload="init()">
+	<div>
+		<h1>Calculadora</h1>
+	</div>
+
+	<div>
+   <table    class="calculadora">
+      <tr>
+        <td colspan="4" ><span  id="resultado" maxlength="6" ></span></td>
+      </tr>
+      <div id="botones">
+      <tr>
+        <td><button id="uno">1</button></td>
+        <td><button id="dos">2</button></td>
+        <td><button id="tres">3</button></td>
+        <td><button id="suma">+</button></td>
+      </tr>
+      <tr>
+        <td><button id="cuatro">4</button></td>
+        <td><button id="cinco">5</button></td>
+        <td><button id="seis">6</button></td>
+        <td><button id="resta">-</button></td>
+      </tr>
+      <tr>
+        <td><button id="siete">7</button></td>
+        <td><button id="ocho">8</button></td>
+        <td><button id="nueve">9</button></td>
+        <td><button id="multi">*</button></td>
+      </tr>
+      <tr>
+        <td><button id="cero">0</button></td>
+        <td><button id="cambiarBotones">BN</button></td>
+        <td colspan="1"><button id="factorial">BR</button></td>
+        <td colspan="3"><button id="div">/</button></td>          
+      </tr>
+      <tr>
+        <td colspan="1" align="center"><button id="borraAll">C</button>
+          <td colspan="1" align="center"><button id="borrarUno">DEL</button></td>
+        <td><button id="punto">.</button></td>
+        <td><button id="igual">=</button></td>            
+      </tr>
+      </div>
+    </table>
+    </div>
+    <script type="text/javascript">
+    	var valor1;
+    	var valor2;
+    	var operacion;
+    	function init() {
+    		// variables que obtienen los valores
+    		var resultado= document.getElementById('resultado');
+    		var uno = document.getElementById('uno');
+    		var dos = document.getElementById('dos');
+    		var tres = document.getElementById('tres');
+    		var suma = document.getElementById('suma');
+    		var cuatro = document.getElementById('cuatro');
+    		var cinco = document.getElementById('cinco');
+    		var seis = document.getElementById('seis');
+    		var resta = document.getElementById('resta');
+    		var siete = document.getElementById('siete');
+    		var ocho = document.getElementById('ocho');
+    		var nueve = document.getElementById('nueve');
+    		var multi = document.getElementById('multi');
+    		var factorial = document.getElementById('factorial');
+    		var div = document.getElementById('div');
+    		var cambiarBotones = document.getElementById('cambiarBotones');
+    		var cero = document.getElementById('cero');
+    		var ac = document.getElementById('borraAll');
+    		var del = document.getElementById('borrarUno');
+    		var punto = document.getElementById('punto');
+    		var igual = document.getElementById('igual');
+
+
+    		//Eventos en los botones.
+    		uno.onclick= function(e){
+    			resultado.textContent = resultado.textContent + "1";
+    		}
+    		dos.onclick= function(e){
+    			resultado.textContent = resultado.textContent + "2";
+    		}
+    		tres.onclick= function(e){
+    			resultado.textContent = resultado.textContent + "3";
+    		}
+    		cuatro.onclick= function(e){
+    			resultado.textContent = resultado.textContent + "4";
+    		}
+    		cinco.onclick= function(e){
+    			resultado.textContent = resultado.textContent + "5";
+    		}
+    		seis.onclick= function(e){
+    			resultado.textContent = resultado.textContent + "6";
+    		}
+    		siete.onclick= function(e){
+    			resultado.textContent = resultado.textContent + "7";
+    		}
+    		ocho.onclick= function(e){
+    			resultado.textContent = resultado.textContent + "8";
+    		}
+    		nueve.onclick= function(e){
+    			resultado.textContent = resultado.textContent + "9";
+    		}
+    		cero.onclick= function(e){
+    			resultado.textContent = resultado.textContent + "0";
+    		}
+    		punto.onclick= function(e){
+    			resultado.textContent = resultado.textContent + ".";
+    		}
+    		cambiarBotones.onclick= function(e){
+    		}
+    		ac.onclick= function(e){
+    			limpiar();
+    		}
+    		del.onclick= function(e){
+    			resultado.textContent = resultado.textContent.slice(0,-1);
+    		}
+    		suma.onclick= function(e){
+    			valor1=resultado.textContent;
+    			operacion="+";
+    			limpiar();
+    		}
+    		resta.onclick= function(e){
+    			valor1=resultado.textContent;
+    			operacion="-";
+    			limpiar();
+    		}
+    		multi.onclick= function(e){
+    			valor1=resultado.textContent;
+    			operacion="*";
+    			limpiar();
+    		}
+    		div.onclick= function(e){
+    			valor1=resultado.textContent;
+    			operacion="/";
+    			limpiar();
+    		}
+    		factorial.onclick= function(e){
+    			valor1=resultado.textContent;
+    			var fact=0;
+    			while(valor1!=0){
+    					fact=fact*valor1;
+    					valor1--;
+    			}
+    			resultado.textContent = resultado.textContent + fact;
+    			operacion="!";
+    		}
+    		igual.onclick= function(e){
+    			valor2=resultado.textContent;
+    			limpiar();
+    			resolver();
+    		}
+    	}
+
+    	function limpiar(){
+    		resultado.textContent="";
+    	}
+    	function resetear(){
+    		resultado.textContent="";
+    		operacion="";
+    		valor1=0;
+    		valor2=0;
+    	}
+    	function botonesCirculares(){
+
+    	}
+    	function resolver(){
+    		var res=0;
+    		switch(operacion){
+    			case "+":
+    			res = parseFloat(valor1) + parseFloat(valor2); 
+    			break;
+    			case "-":
+    			res = parseFloat(valor1) - parseFloat(valor2); 
+    			break;
+    			case "*":
+    			res = parseFloat(valor1) * parseFloat(valor2); 
+    			break;
+    			case "/":
+    			res = parseFloat(valor1) / parseFloat(valor2); 
+    			break;
+    		}
+    		resetear();
+    		resultado.textContent=res;
+    	}
+    </script>
+</body>
+</html>
