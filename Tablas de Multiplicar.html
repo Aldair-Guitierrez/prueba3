@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Tablas de multiplicar</title>
+</head>
+<style>
+	body
+	{
+		background-color: red;
+	}
+</style>
+<body>
+	<table>
+		<tr>
+			<td>
+				
+			</td>
+		</tr>
+	</table>
+<script>
+	//Tablas de multiplicar
+/*
+	valor=prompt("Que tabla desea mostrar");
+     document.write("<table border=\"2\">");
+	for (i = 1; i <= 10; i++) {
+		document.write("<tr>"+
+			"<td>"+valor+"</td>"+
+			"<td>"+"*"+"</td>"+
+			"<td>"+i+"</td>"+
+			"<td>"+"="+"</td>"+
+			"<td>"+(valor*i)+"</td>"+
+			"</tr>");
+	}
+	document.write("</table>");
+*/
+
+//Promediar numeros con tabla
+b=0;
+valores=prompt("Para cuantos numeros desea promediar")
+document.write("<table border=\"2\">");
+for ( i = 1; i <= valores; i++) {
+	c=prompt("Ingresa el valor "+i)
+	document.write("<tr>"+
+
+		"<td>"+(c)+"</td>"+
+		"</tr>");
+	
+    b+=parseFloat(c);
+	
+}
+document.write("<tr>"+
+
+		"<td>"+"promedio: "+(promedio=(b/valores))+"</td>"+
+		"</tr>");
+document.write("</table>");
+
+//promedio=(b/valores);
+//alert("El promedio es: "+(promedio));
+</script>
+
+</body>
+</html>

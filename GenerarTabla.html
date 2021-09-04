@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+	<link rel="stylesheet" href="css/cssTablas.css">
+
+	<title>Tablas</title>
+</head>
+<body>
+	<h1>Tabla de datos</h1>
+	<div class="center">
+		
+	
+	<div class="mujeres" id="tablaM">
+		
+	
+	<table>
+		<tbody>
+			<tr>
+				<td>
+					
+				</td>
+			</tr>
+		</tbody>
+	</table>
+	</div>
+	<div class="hombres" id="tablaH">
+			<table>
+		<tbody>
+			<tr>
+				<td>
+					
+				</td>
+			</tr>
+		</tbody>
+	</table>
+
+	</div>
+ </div>
+	<br>
+	<script type="text/javascript">			
+		do{
+			sexo =prompt("Sexo H|M");
+			if(sexo=="m" || sexo=="M"){
+			tablaMujeres(sexo);
+			}
+			if(sexo=="h" || sexo=="H"){
+			tablaHombres(sexo);
+			}
+
+			var resp=prompt("Desea ingresar otro nombre");
+		}while(resp=="si" || resp=="SI");
+
+
+		
+
+		function tablaMujeres(sexo) {
+			var sexo=sexo;
+			var resp=resp
+			var contM=1;
+			codigoHTML	="<table border=\"2\"><tbody>";
+			//Encabezado
+			codigoHTML+="<thead>";
+			codigoHTML+="<tr>";
+			codigoHTML+="<td colspan=\"7\" align='center' >"+"Tabla Mujeres"+"</td>";
+			codigoHTML+="</tr>";
+			codigoHTML+="<tr>";
+			codigoHTML+="<td rowspan=\"2\">"+"Id"+"</td>";
+			codigoHTML+="<td rowspan=\"2\">"+"Sexo"+"</td>";
+			codigoHTML+="<td rowspan=\"2\">"+"Nombre"+"</td>";
+			codigoHTML+="<td colspan=\"4\" align='center'>"+"Estado de Animo"+"</td>";
+			codigoHTML+="</tr>";
+			codigoHTML+="<tr>";
+			codigoHTML+="<td>"+"Enojado"+"</td>";
+			codigoHTML+="<td>"+"Triste"+"</td>";
+			codigoHTML+="<td>"+"Alegre"+"</td>";
+			codigoHTML+="<td>"+"Nervioso"+"</td>";
+			codigoHTML+="</tr>"
+			codigoHTML+="</thead>";
+			//Termina Encabezado de tabla
+			
+			//do{
+				
+				do{
+
+
+				//sexo =prompt("Sexo H|M");
+				var nombre=prompt("Ingresa el nombre:");
+				var estado=prompt("Estado de animo"+ 
+				" A)Enojado,"
+				+" B)Triste,"
+				+" C)Alegre,"
+				+" D)Nervioso");
+			//var resp=prompt("Desea ingresar otro nombre");
+			 codigoHTML+="<tr>"
+						+"<td>"+contM+"</td>"
+						+"<td>"+sexo+"</td>"
+						+"<td>"+nombre+"</td>";
+					if (estado=="A" || estado=="a") {
+					codigoHTML+="<td>"+"<img src=\"imagenes/enojado.png\">"+"</td>"
+									+"<td>"+"<img src=\"\">"+"</td>"
+									+"<td>"+"<img src=\"\">"+"</td>"
+									+"<td>"+"<img src=\"\">"+"</td>";
+					}
+					if (estado=="B" || estado=="b") {
+					codigoHTML+="<td>"+"<img src=\"\">"+"</td>"
+									+"<td>"+"<img src=\"imagenes/triste.png\">"+"</td>"
+									+"<td>"+"<img src=\"\">"+"</td>"
+									+"<td>"+"<img src=\"\">"+"</td>";
+					}
+					if (estado=="C" || estado=="c") {
+					codigoHTML+="<td>"+"<img src=\"\">"+"</td>"
+									+"<td>"+"<img src=\"\">"+"</td>"
+									+"<td>"+"<img src=\"imagenes/alegre.png\">"+"</td>"
+									+"<td>"+"<img src=\"\">"+"</td>";
+					}
+					if (estado=="D" || estado=="d") {
+					codigoHTML+="<td>"+"<img src=\"\">"+"</td>"
+									+"<td>"+"<img src=\"\">"+"</td>"
+									+"<td>"+"<img src=\"\">"+"</td>"
+									+"<td>"+"<img src=\"imagenes/nervioso.png\">"+"</td>";
+					}
+					codigoHTML+="</tr>";
+					contM++;
+				}while(sexo!="m");
+			//}while(resp=="si" || resp=="SI");
+			codigoHTML+="<tr>";
+			codigoHTML+="<td>"+"Hola"+"</td>";
+			codigoHTML+="<td>"+"Hola"+"</td>";
+			codigoHTML+="<td>"+"Hola"+"</td>";
+			codigoHTML+="<td>"+"Hola"+"</td>";
+			codigoHTML+="<td>"+"Hola"+"</td>";
+			codigoHTML+="<td>"+"Hola"+"</td>";
+			codigoHTML+="<td>"+"Hola"+"</td>";
+			codigoHTML+="</tr>";
+			codigoHTML+="</tbody></table>";
+			
+			document.getElementById("tablaM").innerHTML=codigoHTML;
+		}
+		function tablaHombres(sexo) {
+			var contH=1;
+			var sexo=sexo;
+			//var resp=resp;
+
+			codigoHTML	="<table border=\"2\"><tbody>";
+			//Encabezado
+			codigoHTML+="<thead>";
+			codigoHTML+="<tr>";
+			codigoHTML+="<td colspan=\"7\" align='center' >"+"Tabla Hombres"+"</td>";
+			codigoHTML+="</tr>";
+			codigoHTML+="<tr>";
+			codigoHTML+="<td rowspan=\"2\">"+"Id"+"</td>";
+			codigoHTML+="<td rowspan=\"2\">"+"Sexo"+"</td>";
+			codigoHTML+="<td rowspan=\"2\">"+"Nombre"+"</td>";
+			codigoHTML+="<td colspan=\"4\" align='center'>"+"Estado de Animo"+"</td>";
+			codigoHTML+="</tr>";
+			codigoHTML+="<tr>";
+			codigoHTML+="<td>"+"Enojado"+"</td>";
+			codigoHTML+="<td>"+"Triste"+"</td>";
+			codigoHTML+="<td>"+"Alegre"+"</td>";
+			codigoHTML+="<td>"+"Nervioso"+"</td>";
+			codigoHTML+="</tr>"
+			codigoHTML+="</thead>";
+			//Termina Encabezado de tabla
+			
+			//do{
+				do{
+
+
+				//sexo =prompt("Sexo H|M");
+				var nombre=prompt("Ingresa el nombre:");
+				var estado=prompt("Estado de animo"+ 
+				" A)Enojado,"
+				+" B)Triste,"
+				+" C)Alegre,"
+				+" D)Nervioso");
+			var resp=prompt("Desea ingresar otro nombre");
+			 codigoHTML+="<tr>"
+						+"<td>"+contH+"</td>"
+						+"<td>"+sexo+"</td>"
+						+"<td>"+nombre+"</td>";
+					if (estado=="A" || estado=="a") {
+					codigoHTML+="<td>"+"<img src=\"imagenes/enojado.png\">"+"</td>"
+									+"<td>"+"<img src=\"\">"+"</td>"
+									+"<td>"+"<img src=\"\">"+"</td>"
+									+"<td>"+"<img src=\"\">"+"</td>";
+					}
+					if (estado=="B" || estado=="b") {
+					codigoHTML+="<td>"+"<img src=\"\">"+"</td>"
+									+"<td>"+"<img src=\"imagenes/triste.png\">"+"</td>"
+									+"<td>"+"<img src=\"\">"+"</td>"
+									+"<td>"+"<img src=\"\">"+"</td>";
+					}
+					if (estado=="C" || estado=="c") {
+					codigoHTML+="<td>"+"<img src=\"\">"+"</td>"
+									+"<td>"+"<img src=\"\">"+"</td>"
+									+"<td>"+"<img src=\"imagenes/alegre.png\">"+"</td>"
+									+"<td>"+"<img src=\"\">"+"</td>";
+					}
+					if (estado=="D" || estado=="d") {
+					codigoHTML+="<td>"+"<img src=\"\">"+"</td>"
+									+"<td>"+"<img src=\"\">"+"</td>"
+									+"<td>"+"<img src=\"\">"+"</td>"
+									+"<td>"+"<img src=\"imagenes/nervioso.png\">"+"</td>";
+					}
+					codigoHTML+="</tr>";
+					contH++;
+				
+				}while(sexo!="h");
+			//}while(resp=="si" || resp=="SI");
+			codigoHTML+="<tr>";
+			codigoHTML+="<td>"+"Hola"+"</td>";
+			codigoHTML+="<td>"+"Hola"+"</td>";
+			codigoHTML+="<td>"+"Hola"+"</td>";
+			codigoHTML+="<td>"+"Hola"+"</td>";
+			codigoHTML+="<td>"+"Hola"+"</td>";
+			codigoHTML+="<td>"+"Hola"+"</td>";
+			codigoHTML+="<td>"+"Hola"+"</td>";
+			codigoHTML+="</tr>";
+			codigoHTML+="</tbody></table>";
+			document.getElementById("tablaH").innerHTML=codigoHTML;
+		}
+
+	</script>
+</body>
+</html>

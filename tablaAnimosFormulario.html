@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="css/estilos.css">
+    <title>Document</title>
+
+</head>
+
+<body>
+    <table id="tablaM" border="2" class="caja">
+        <caption>Mujeres</caption>
+        <tr>
+            <td rowspan="2">NP</td>
+            <td colspan="4">Estados</td>
+        </tr>
+        <tr>
+            <td>Alegre</td>
+            <td>Enojado</td>
+            <td>Triste</td>
+            <td>Nervioso</td>
+        </tr>
+    </table>
+    <table id="tablaH" border="2" class="caja2">
+        <caption>Hombres</caption>
+        <tr>
+            <td rowspan="2">NP</td>
+            <td colspan="4">Estados</td>
+        </tr>
+        <tr>
+            <td>Alegre</td>
+            <td>Enojado</td>
+            <td>Triste</td>
+            <td>Nervioso</td>
+        </tr>
+    </table>
+    <script>
+        function enviar() {
+            var nom = document.getElementById("nombre").value;
+            console.log(nom);
+            var sexo = document.getElementById("sexo").value;
+            var animo = document.getElementById("animo").value;
+            if (sexo == "H") {
+                switch (animo) {
+                    case "A":
+                        document.getElementById("tablaH").innerHTML += "<tr><td>" + nom + "</td><td><img src=\"caritas/Alegre.png\"></td><td>" + "" + "</td><td>" + "" + "</td><td>" + "" + "</td></tr>";
+                        break;
+                    case 'B':
+                        document.getElementById("tablaH").innerHTML += "<tr><td>" + nom + "</td><td>" + "" + "</td><td><img src=\"caritas/enojado.png\"> </td><td>" + "" + "</td><td>" + "" + "</td></tr>";
+                        break;
+                    case 'C':
+                        document.getElementById("tablaH").innerHTML += "<tr><td>" + nom + "</td><td>" + "" + "</td><td>" + "" + "</td><td><img src=\"caritas/triste.png\"></td><td>" + "" + "</td></tr>";
+                        break;
+                    case 'D':
+                        document.getElementById("tablaH").innerHTML += "<tr><td>" + nom + "</td><td>" + "" + "</td><td>" + "" + "</td><td>" + "" + "</td><td><img src=\"caritas/nervioso.png\"></td></tr>";
+                        break;
+                }
+            } else {
+                if (sexo == 'F') {
+                    switch (animo) {
+                        case 'A':
+                            document.getElementById("tablaM").innerHTML += "<tr><td>" + nom + "</td><td><img src=\"caritas/Alegre.png\"></td><td>" + "" + "</td><td>" + "" + "</td><td>" + "" + "</td></tr>";
+                            break;
+
+                        case 'B':
+                            document.getElementById("tablaM").innerHTML += "<tr><td>" + nom + "</td><td>" + "" + "</td><td><img src=\"caritas/enojado.png\"> </td><td>" + "" + "</td><td>" + "" + "</td></tr>";
+                            break;
+                        case 'C':
+                            document.getElementById("tablaM").innerHTML += "<tr><td>" + nom + "</td><td>" + "" + "</td><td>" + "" + "</td><td><img src=\"caritas/triste.png\"></td><td>" + "" + "</td></tr>";
+                            break;
+                        case 'D':
+                            document.getElementById("tablaM").innerHTML += "<tr><td>" + nom + "</td><td>" + "" + "</td><td>" + "" + "</td><td>" + "" + "</td><td><img src=\"caritas/nervioso.png\"></td></tr>";
+                            break;
+                    }
+                }
+            }
+
+
+        }
+    </script>
+    <form>
+        <div>
+            <label>Nombre<br></label>
+            <input type="text" id="nombre" value="" class="redondo"><br>
+            <label>Sexo</label><br>
+            <input type="text" id="sexo" value="" class="redondo"><br>
+            <label>Animo</label><br>
+            <input type="text" id="animo" value="" class="redondo"><br>
+            <input type="button" value="enviar" onclick="enviar()" class="boton">
+        </div>
+    </form>
+</body>
+
+</html>

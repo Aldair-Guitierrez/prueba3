@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Tabla de animos</title>
+</head>
+<link rel="stylesheet" href="css/cssTablas.css">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+<body>
+	<h1 align="center">Tabla de datos</h1>
+	<div class="center">
+	<div class="hombres">
+		<table  class="table table-hover table-dark" border="1">
+		<thead>
+			<tr>
+				<td colspan="6" align="center" class="bg-success">Tabla Hombres</td>
+			</tr>
+		 	<tr>
+				<td rowspan="2" class="bg-success">IP</td>
+				<td rowspan="2" class="bg-success">Nombre</td>
+				<td colspan="4" align="center">Estado de Animo</td>
+			</tr>
+			<tr class="bg-info">
+				<td class="bg-primary">Enojado</td>
+				<td class="bg-success">Triste</td>
+				<td class="bg-warning">Alegre</td>
+				<td class="bg-danger">Nervioso</td>
+			</tr>
+		</thead>
+		<tbody id="TablaHombres"></tbody>
+	</table>
+</div>
+<div class="mujeres">
+	<table  class="table table-hover table-dark" border="1">
+		<thead>
+			<tr >
+				<td colspan="6" align="center" class="bg-success">Tabla Mujeres</td>
+			</tr>
+		 	<tr>
+				<td rowspan="2" class="bg-success">IP</td>
+				<td rowspan="2" class="bg-success">Nombre</td>
+				<td colspan="4" align="center">Estado de Animo</td>
+			</tr>
+			<tr class="bg-info" >
+				<td class="bg-primary">Enojado</td>
+				<td class="bg-success">Triste</td>
+				<td class="bg-warning">Alegre</td>
+				<td class="bg-danger">Nervioso</td>
+			</tr>
+		</thead>
+		<tbody id="TablaMujeres"></tbody>
+	</table>
+</div>
+</div>
+<script type="text/javascript">
+	var resulHombres=document.getElementById('TablaHombres');
+	var resulMujeres=document.getElementById('TablaMujeres');
+
+	totalH=0;
+	enojadoH=0;
+	tristeH=0;
+	alegreH=0;
+	nerviosoH=0;
+	totalM=0;
+	enojadoM=0;
+	tristeM=0;
+	alegreM=0;
+	nerviosoM=0;
+	contH=1;
+	contM=1;
+
+	do{
+		nombre=prompt("Introduce el nombre");
+		estado=prompt("Estado de animo"+ 
+						" A)Enojado,"
+						+" B)Triste,"
+						+" C)Alegre,"
+						+" D)Nervioso");
+		sexo=prompt("Sexo: (H|M)");
+		if (sexo=="H" || sexo=="h"){
+			totalH++;
+			if (estado=="A" || estado=="a") {
+				enojadoH++;
+				resulHombres.innerHTML+=  "<tr class='bg-primary'>"
+								+"<td>"+ contH +"</td>"
+								+"<td>"+ nombre +"</td>"
+								+"<td >"+"<img src=\"imagenes/enojado.png\">"+"</td>"
+								+"<td>"+"<img src=\"\">"+"</td>"
+								+"<td>"+"<img src=\"\">"+"</td>"
+								+"<td>"+"<img src=\"\">"+"</td>"
+								+"</tr>";
+			}else if (estado=="B" || estado=="b") {
+				tristeH++;
+				resulHombres.innerHTML+=  "<tr class='bg-success'>"
+								+"<td>"+ contH +"</td>"
+								+"<td>"+ nombre +"</td>"
+								+"<td>"+"<img src=\"\">"+"</td>"
+								+"<td >"+"<img src=\"imagenes/triste.png\">"+"</td>"
+								+"<td>"+"<img src=\"\">"+"</td>"
+								+"<td>"+"<img src=\"\">"+"</td>"
+								+"</tr>";
+
+			}else if(estado=="C" || estado=="c"){
+				alegreH++;
+				resulHombres.innerHTML+=  "<tr class='bg-warning'>"
+								+"<td>"+ contH +"</td>"
+								+"<td>"+ nombre +"</td>"
+								+"<td>"+"<img src=\"\">"+"</td>"
+								+"<td>"+"<img src=\"\">"+"</td>"
+								+"<td >"+"<img src=\"imagenes/alegre.png\">"+"</td>"
+								+"<td>"+"<img src=\"\">"+"</td>"
+								+"</tr>";
+
+			}else{
+				nerviosoH++;
+				resulHombres.innerHTML+=  "<tr class='bg-danger'>"
+								+"<td>"+ contH +"</td>"
+								+"<td>"+ nombre +"</td>"
+								+"<td>"+"<img src=\"\">"+"</td>"
+								+"<td>"+"<img src=\"\">"+"</td>"
+								+"<td>"+"<img src=\"\">"+"</td>"
+								+"<td >"+"<img src=\"imagenes/nervioso.png\">"+"</td>"
+								+"</tr>";
+			}
+			contH++;
+
+		}else{
+			totalM++;
+			if (estado=="A" || estado=="a") {
+				enojadoM++;
+				resulMujeres.innerHTML+= "<tr class='bg-primary'>"
+								+"<td>"+ contM +"</td>"
+								+"<td>"+ nombre +"</td>"
+								+"<td>"+"<img src=\"imagenes/enojado.png\">"+"</td>"
+								+"<td>"+"<img src=\"\">"+"</td>"
+								+"<td>"+"<img src=\"\">"+"</td>"
+								+"<td>"+"<img src=\"\">"+"</td>"
+								+"</tr>";
+			}else if (estado=="B" || estado=="b") {
+				tristeM++;
+				resulMujeres.innerHTML+= "<tr class='bg-success'>"
+								+"<td>"+ contM +"</td>"
+								+"<td>"+ nombre +"</td>"
+								+"<td>"+"<img src=\"\">"+"</td>"
+								+"<td>"+"<img src=\"imagenes/triste.png\">"+"</td>"
+								+"<td>"+"<img src=\"\">"+"</td>"
+								+"<td>"+"<img src=\"\">"+"</td>"
+								+"</tr>";
+
+			}else if(estado=="C" || estado=="c"){
+				alegreM++;
+				resulMujeres.innerHTML+=  "<tr class='bg-warning'>"
+								+"<td>"+ contM+"</td>"
+								+"<td>"+ nombre +"</td>"
+								+"<td>"+"<img src=\"\">"+"</td>"
+								+"<td>"+"<img src=\"\">"+"</td>"
+								+"<td>"+"<img src=\"imagenes/alegre.png\">"+"</td>"
+								+"<td>"+"<img src=\"\">"+"</td>"
+								+"</tr>";
+
+			}else{
+				nerviosoM++;
+				resulMujeres.innerHTML+=  "<tr class='bg-danger'>"
+								+"<td>"+ contM +"</td>"
+								+"<td>"+ nombre +"</td>"
+								+"<td>"+"<img src=\"\">"+"</td>"
+								+"<td>"+"<img src=\"\">"+"</td>"
+								+"<td>"+"<img src=\"\">"+"</td>"
+								+"<td>"+"<img src=\"imagenes/nervioso.png\">"+"</td>"
+								+"</tr>";
+			}	 
+			contM++;
+		}
+		res=prompt("Desea ingresar otro nombre(S/N)");
+	}while(res=="s" || res=="S");
+
+		resulHombres.innerHTML+="<tr>"
+					   +"<td colspan='2'>Total Hombres: "+totalH+"</td>"
+					   +"<td >"+enojadoH+"</td>"
+					   +"<td >"+tristeH+"</td>"
+					   +"<td >"+alegreH+"</td>"
+					   +"<td >"+nerviosoH+"</td>"
+					   +"</tr>";
+	    resulMujeres.innerHTML+="<tr>"
+					   +"<td colspan='2'>Total Mujeres: "+totalM+"</td>"
+					   +"<td >"+enojadoM+"</td>"
+					   +"<td >"+tristeM+"</td>"
+					   +"<td >"+alegreM+"</td>"
+					   +"<td >"+nerviosoM+"</td>"
+					   +"</tr>";
+ 
+</script>
+</body>
+</html>
